@@ -1,1 +1,4 @@
 List of Safe Places
+<%=@safeplaces.each do |safe_place|%>
+  <%="#{safe_place.location}: #{safe_place.name}"%>
+<%end%>

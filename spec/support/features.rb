@@ -1,5 +1,5 @@
 def sign_in_user
-  user = User.new!(
+  user = User.new(
     name: "Jorge",
     password: "password",
     chicken: true
