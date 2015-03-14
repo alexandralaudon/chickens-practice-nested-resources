@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :chickens
   get 'sign-up' => "registrations#new"
   post 'sign-up' => "registrations#create"
+  get 'sign-in' => "authentication#new"
+  post 'sign-in' => "authentication#create"
   resources :safe_places
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

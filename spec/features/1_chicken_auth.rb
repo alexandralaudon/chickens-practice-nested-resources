@@ -21,8 +21,9 @@ feature 'chickens have a secret plan' do
     click_on "Sign In"
     fill_in :name, with: user.name
     fill_in :password, with: user.password
+    click_on "Sign In"
 
-    expect(page).to have_content "List of escape plans"
+    expect(page).to have_content "List of Safe Places"
   end
 
 
