@@ -14,7 +14,8 @@ feature 'chickens have a secret plan' do
     expect(page).to have_content "Welcome to the movement! Bock bock!"
     expect(page).to have_content "List of Safe Places"
   end
-  scenario 'non-chickens can\'t sign up'
+  
+  scenario 'non-chickens can\'t sign up' do
     visit root_path
     click_on "Sign Up"
 
