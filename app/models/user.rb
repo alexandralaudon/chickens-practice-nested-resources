@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
 
   def validates_chicken
     if chicken == false
-      errors[:chicken] << "You must be a chicken to be part of our escape plan!"
+      errors[:error] << "You must be a chicken to be part of our escape plan!"
     end
   end
+
 end

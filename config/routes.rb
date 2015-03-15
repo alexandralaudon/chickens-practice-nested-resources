@@ -5,7 +5,15 @@ Rails.application.routes.draw do
   post 'sign-up' => "registrations#create"
   get 'sign-in' => "authentication#new"
   post 'sign-in' => "authentication#create"
-  resources :safe_places
+  resources :safe_places do
+    resources :escape_plans, only: [:new, :create]
+  end
+
+  resources :escape_plans, only: [:show] do
+    resources :memberships, only: [:create, :destroy]
+  end
+
+  get 'escape_plans' => "safe_places#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

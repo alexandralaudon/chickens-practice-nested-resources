@@ -1,0 +1,16 @@
+<%=@escape_plan.description%>
+
+
+  <%@escape_plan.memberships.each do |membership|%>
+    <%if membership.id%>
+    <%=membership.chicken.name%>
+    <%=link_to "Remove this chicken", [@escape_plan, membership], method: :delete%>
+<%end%>
+<%end%>
+
+
+<%=form_for [@escape_plan, @membership] do |f|%>
+<%=f.label :membership, "Add a chicken to your escape plan!"%>
+<%=f.collection_select(:chicken_id, Chicken.all, :id, :name)%>
+<%=f.submit "Add Chicken to Plan"%>
+<%end%>
