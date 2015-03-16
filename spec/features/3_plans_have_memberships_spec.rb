@@ -1,4 +1,4 @@
-require 'rails_helper'
+srequire 'rails_helper'
 
 feature 'chickens can be members of escape plans' do
   scenario 'chickens can be added to escape plans on escape plan show page' do
@@ -11,8 +11,9 @@ feature 'chickens can be members of escape plans' do
 
     click_on "Add Chicken to Plan"
 
-    expect(page).to have_content "We'll notify Ben Affleck that s/he has been successfully added to your escape plan."
 
+    expect(page).to have_content "We'll notify Ben Affleck that s/he has been successfully added to your escape plan."
+    expect(page).to have_content "Member: Ben Affleck"
   end
 
   scenario 'user can delete chickens from escape plans' do
@@ -25,12 +26,9 @@ feature 'chickens can be members of escape plans' do
 
     click_on "Add Chicken to Plan"
 
-
     expect(page).to have_content "Member: Ben Affleck"
 
     click_on "Remove this chicken"
-
-
 
 
     expect(page).to have_content "Ben Affleck was a delicious chicken!"
