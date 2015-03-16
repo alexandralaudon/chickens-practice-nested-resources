@@ -25,7 +25,8 @@ feature 'chickens can be members of escape plans' do
 
     click_on "Add Chicken to Plan"
 
-    expect(page).to have_content "Ben Affleck"
+
+    expect(page).to have_content "Member: Ben Affleck"
 
     click_on "Remove this chicken"
 
