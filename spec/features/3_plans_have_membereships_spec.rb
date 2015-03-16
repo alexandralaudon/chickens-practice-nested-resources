@@ -11,6 +11,9 @@ feature 'chickens can be members of escape plans' do
 
     click_on "Add Chicken to Plan"
 
+    expect(page).to have_content "Members: Ben Affleck"
+
+
     expect(page).to have_content "We'll notify Ben Affleck that s/he has been successfully added to your escape plan."
 
   end
@@ -21,13 +24,11 @@ feature 'chickens can be members of escape plans' do
     sign_in_user
     visit escape_plan_path(escape_plan)
 
-    expect(page).to have_content "Members: Ben Affleck"
-
     select "Ben Affleck", from: "membership_chicken_id"
 
     click_on "Add Chicken to Plan"
 
-    expect(page).to have_content "Ben Affleck"
+    expect(page).to have_content "Members: Ben Affleck"
 
     click_on "Remove this chicken"
 

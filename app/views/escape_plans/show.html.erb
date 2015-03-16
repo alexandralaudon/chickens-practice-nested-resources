@@ -1,6 +1,6 @@
 <%@escape_plan.memberships.each do |membership|%>
   <%if membership.id%>
-    <%=membership.chicken.name%>
+    <%="Members: #{membership.chicken.name}"%>
     <%=link_to "Remove this chicken", [@escape_plan, membership], method: :delete%>
   <%end%>
 <%end%>
