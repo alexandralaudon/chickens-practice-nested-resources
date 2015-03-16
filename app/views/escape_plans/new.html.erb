@@ -1,0 +1,9 @@
+<%=form_for [@safe_place, @escape_plan] do |f|%>
+  <%=f.label :description%>
+  <%=f.text_field :description%>
+  <%=f.label :first_stop%>
+  <%=f.text_field :first_stop%>
+  <%=f.label :disguise%>
+  <%=f.text_field :disguise%>
+  <%=f.submit "Create Escape Plan" %>
+<%end%>

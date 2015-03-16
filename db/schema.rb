@@ -11,9 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150315172100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chickens", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "eggs_per_week"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "escape_plans", force: :cascade do |t|
+    t.string  "description"
+    t.string  "first_stop"
+    t.string  "disguise"
+    t.integer "safe_place_id"
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer "escape_plan_id"
+    t.integer "chicken_id"
+  end
+
+  create_table "safe_places", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string  "name"
+    t.string  "password_digest"
+    t.boolean "chicken"
+  end
 
 end

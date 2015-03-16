@@ -1,0 +1,9 @@
+<%=link_to "Create New Escape Plan to #{@safe_place.location}", new_safe_place_escape_plan_path(@safe_place)%>
+
+<%if @safe_place.escape_plans.any?%>
+  <%@safe_place.escape_plans.each do |escape_plan|%>
+    <br>
+    <%=link_to "#{escape_plan.description}, via #{escape_plan.first_stop}, involves a #{escape_plan.disguise}", escape_plan%>
+    <br>
+  <%end%>
+<%end%>

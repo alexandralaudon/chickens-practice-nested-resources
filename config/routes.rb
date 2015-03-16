@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  root 'chickens#index'
+  resources :chickens
+  resources :safe_places do
+    resources :escape_plans, only: [:new, :create]
+  end
+  resources :escape_plans, only: [:show] do
+    resources :memberships, only: [:create, :destroy]
+  end
+  get 'sign-up' => 'registrations#new'
+  post 'sign-up' => 'registrations#create'
+  get 'sign-in' => 'authentication#new'
+  post 'sign-in' => 'authentication#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

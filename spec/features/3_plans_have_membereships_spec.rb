@@ -21,6 +21,8 @@ feature 'chickens can be members of escape plans' do
     sign_in_user
     visit escape_plan_path(escape_plan)
 
+    expect(page).to have_content "Members: Ben Affleck"
+
     select "Ben Affleck", from: "membership_chicken_id"
 
     click_on "Add Chicken to Plan"

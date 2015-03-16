@@ -1,0 +1,8 @@
+List of Chickens
+<%@chickens.each do |chicken|%>
+<%=link_to "#{chicken.name}, #{chicken.eggs_per_week} eggs per week", chicken%>
+<%end%>
+<%=link_to "Add Chicken", new_chicken_path%>
+<br>
+<%=link_to "Sign Up", sign_up_path%>
+<%=link_to "Sign In", sign_in_path%>

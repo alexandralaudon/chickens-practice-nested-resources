@@ -1,0 +1,8 @@
+List of Safe Places
+<%@safe_places.each do |safe_place|%>
+  <br>
+  <%=link_to "#{safe_place.location}: #{safe_place.name}", safe_place%>
+  <br>
+<%end%>
+<br>
+<%=link_to "Another place you\'d like to escape to?", new_safe_place_path%>
